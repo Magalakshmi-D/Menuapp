@@ -1,0 +1,396 @@
+{
+    "system": {
+        "system_enable": true,
+        "system_fault": false,
+        "auto_recovery_time_min": 10
+    },
+    "common": {
+        "groups": [
+            {
+                "group": 1,
+                "channels-phasedelay": "T1:0, T2:500, T3:1000, T4:1500",
+		"force_enable": true
+            },
+            {
+                "group": 2,
+                "channels-phasedelay": "T5:0, T6:0, T7:0, T8:0",
+		"force_enable": false
+            },
+            {
+                "group": 3,
+                "channels-phasedelay": "T9:100, T10:200, T11:300, T12:400",
+		"force_enable": false
+            },
+            {
+                "group": 4,
+                "channels-phasedelay": "T13:500, T14:700, T15:100, T16:350",
+		"force_enable": false
+            }
+        ],
+        "tracks": {
+            "normal": [
+                {
+                    "track_name": "Normal-Track-1",
+                    "track_number": 1,
+                    "duty_cyle_pct": 50,
+                    "pulse_count": 2,
+                    "tones_count": 8,
+                    "freq_ramp_up_enable": true,
+                    "freq_ramp_up_step_per_1ms": 1,
+                    "tones": [
+                        [0, 60],
+                        [39.1, 120],
+                        [0, 140],
+                        [39.3, 120],
+                        [0, 60],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 500],
+                        [24.6, 150],
+                        [35.2, 200],
+                        [19.4, 150],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 500]
+                    ]
+                },
+                {
+                    "track_name": "Normal-Track-2",
+                    "track_number": 1,
+                    "duty_cyle_pct": 50,
+                    "pulse_count": 2,
+                    "tones_count": 8,
+                    "freq_ramp_up_enable": true,
+                    "freq_ramp_up_step_per_1ms": 1,
+                    "tones": [
+                        [0, 60],
+                        [39.1, 120],
+                        [0, 140],
+                        [39.3, 120],
+                        [0, 60],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 500],
+                        [24.6, 150],
+                        [35.2, 200],
+                        [19.4, 150],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 500]
+                    ]
+                }
+            ],
+            "special": [
+                {
+                    "track_name": "Maintenance-Track-1",
+                    "track_number": 1,
+                    "duty_cyle_pct": 50,
+                    "pulse_count": 2,
+                    "tones_count": 8,
+                    "freq_ramp_up_enable": true,
+                    "freq_ramp_up_step_per_1ms": 1,
+                    "tones": [
+                        [0, 60],
+                        [39.1, 120],
+                        [0, 140],
+                        [39.3, 120],
+                        [0, 60],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 500],
+                        [24.6, 150],
+                        [35.2, 200],
+                        [19.4, 150],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 500]
+                    ]
+                },
+                {
+                    "track_name": "SonicBlast-Track-1",
+                    "track_number": 1,
+                    "duty_cyle_pct": 50,
+                    "pulse_count": 2,
+                    "tones_count": 8,
+                    "freq_ramp_up_enable": true,
+                    "freq_ramp_up_step_per_1ms": 1,
+                    "tones": [
+                        [0, 60],
+                        [39.1, 120],
+                        [0, 140],
+                        [39.3, 120],
+                        [0, 60],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 500],
+                        [24.6, 150],
+                        [35.2, 200],
+                        [19.4, 150],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 0],
+                        [0, 500]
+                    ]
+                }
+            ]
+        },
+        "schedules": [
+            {
+                "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "startTime": "00:00",
+                "endTime": "23:59",
+                "groups-tracks": [
+                    {"group": 1, "track": "Normal-Track-1"}, 
+                    {"group": 2, "track": "Normal-Track-1"}, 
+                    {"group": 3, "track": "Normal-Track-1"}, 
+                    {"group": 4, "track": "Normal-Track-1"}
+                ]
+            },
+            {
+                "days": ["Saturday"],
+                "startTime": "10:00",
+                "endTime": "11:00",
+                "groups-tracks": [
+                    {"group": 1, "track": "Maintenance-Track-1"}, 
+                    {"group": 2, "track": "Maintenance-Track-1"}, 
+                    {"group": 3, "track": "Maintenance-Track-1"}, 
+                    {"group": 4, "track": "Maintenance-Track-1"}]
+            },
+            {
+                "days": ["Sunday"],
+                "startTime": "10:00",
+                "endTime": "10:30",
+                "groups-tracks": [
+                    {"group": 1, "track": "SonicBlast-Track-1"}, 
+                    {"group": 2, "track": "SonicBlast-Track-1"}, 
+                    {"group": 3, "track": "SonicBlast-Track-1"}, 
+                    {"group": 4, "track": "SonicBlast-Track-1"}]
+            }
+        ]
+    },
+    "devices": [
+        {
+            "master": {
+                "vpd": {
+                    "prod_signature": "0x00010001",
+                    "board_id": "0x01",
+                    "hardware_version": "0x0000",
+                    "batch_code": "MMYY",
+                    "uid": "0x00000000000000000000000000000000",
+                    "software_version": "0x0000",
+                    "comm_port": "0x00",
+                    "config_define_addr": "0x0000",
+                    "config_start_addr": "0x0000",
+                    "config_define_len": "0x0000",
+                    "config_start_len": "0x0000"
+                }
+            }
+        },
+        {
+            "backplane": {
+                "vpd": {
+                    "prod_signature": "0x00010001",
+                    "board_id": "0x02",
+                    "hardware_version": "0x0000",
+                    "batch_code": "MMYY",
+                    "uid": "0x00000000000000000000000000000000",
+                    "software_version": "0x0000",
+                    "comm_port": "0x00",
+                    "config_define_addr": "0x0000",
+                    "config_start_addr": "0x0000",
+                    "config_define_len": "0x0000",
+                    "config_start_len": "0x0000"
+                }
+            }
+        },
+        {
+            "quad": [
+                {
+                    "slot": 1,
+                    "card_present": true,
+                    "vpd": {
+                        "prod_signature": "0x00010001",
+                        "board_id": "0x04",
+                        "hardware_version": "0x0000",
+                        "batch_code": "MMYY",
+                        "uid": "0x00000000000000000000000000000000",
+                        "software_version": "0x0000",
+                        "comm_port": "0x01",
+                        "config_define_addr": "0x0000",
+                        "config_start_addr": "0x0000",
+                        "config_define_len": "0x0000",
+                        "config_start_len": "0x0000"
+                    },
+                    "thresholds": {
+                        "supply_24v_low": "0x0000",
+                        "supply_24v_high": "0x0000",
+                        "supply_24v_recoveryvoltage": "0x0000",
+                        "pwm_channel_current_low": "0x0000",
+                        "pwm_channel_current_high": "0x0000",
+                        "pwm_channel_current_recoverycurrent": "0x0000",
+                        "pwm_channel_temperature_high": "0x0000",
+                        "pwm_channel_temperature_critical": "0x0000",
+                        "pwm_channel_temperature_recoverypoint": "0x0000"
+                    },
+                    "channels_enable": {
+                        "T1": true,
+                        "T2": true,
+                        "T3": true,
+                        "T4": true
+                    }
+                },
+                {
+                    "slot": 2,
+                    "card_present": true,					
+                    "vpd": {
+                        "prod_signature": "0x00010001",
+                        "board_id": "0x04",
+                        "hardware_version": "0x0000",
+                        "batch_code": "MMYY",
+                        "uid": "0x00000000000000000000000000000000",
+                        "software_version": "0x0000",
+                        "comm_port": "0x01",
+                        "config_define_addr": "0x0000",
+                        "config_start_addr": "0x0000",
+                        "config_define_len": "0x0000",
+                        "config_start_len": "0x0000"
+                    },
+                    "thresholds": {
+                        "supply_24v_low": "0x0000",
+                        "supply_24v_high": "0x0000",
+                        "supply_24v_recoveryvoltage": "0x0000",
+                        "pwm_channel_current_low": "0x0000",
+                        "pwm_channel_current_high": "0x0000",
+                        "pwm_channel_current_recoverycurrent": "0x0000",
+                        "pwm_channel_temperature_high": "0x0000",
+                        "pwm_channel_temperature_critical": "0x0000",
+                        "pwm_channel_temperature_recoverypoint": "0x0000"
+                    },
+                    "channels_enable": {
+                        "T5": true,
+                        "T6": true,
+                        "T7": true,
+                        "T8": true
+                    }
+                },
+                {
+                    "slot": 3,
+                    "card_present": true,					
+                    "vpd": {
+                        "prod_signature": "0x00010001",
+                        "board_id": "0x04",
+                        "hardware_version": "0x0000",
+                        "batch_code": "MMYY",
+                        "uid": "0x00000000000000000000000000000000",
+                        "software_version": "0x0000",
+                        "comm_port": "0x01",
+                        "config_define_addr": "0x0000",
+                        "config_start_addr": "0x0000",
+                        "config_define_len": "0x0000",
+                        "config_start_len": "0x0000"
+                    },
+                    "thresholds": {
+                        "supply_24v_low": "0x0000",
+                        "supply_24v_high": "0x0000",
+                        "supply_24v_recoveryvoltage": "0x0000",
+                        "pwm_channel_current_low": "0x0000",
+                        "pwm_channel_current_high": "0x0000",
+                        "pwm_channel_current_recoverycurrent": "0x0000",
+                        "pwm_channel_temperature_high": "0x0000",
+                        "pwm_channel_temperature_critical": "0x0000",
+                        "pwm_channel_temperature_recoverypoint": "0x0000"
+                    },
+                    "channels_enable": {
+                        "T9": true,
+                        "T10": true,
+                        "T11": true,
+                        "T12": true
+                    }
+                },
+                {
+                    "slot": 4,
+                    "card_present": true,					
+                    "vpd": {
+                        "prod_signature": "0x00010001",
+                        "board_id": "0x04",
+                        "hardware_version": "0x0000",
+                        "batch_code": "MMYY",
+                        "uid": "0x00000000000000000000000000000000",
+                        "software_version": "0x0000",
+                        "comm_port": "0x01",
+                        "config_define_addr": "0x0000",
+                        "config_start_addr": "0x0000",
+                        "config_define_len": "0x0000",
+                        "config_start_len": "0x0000"
+                    },
+                    "thresholds": {
+                        "supply_24v_low": "0x0000",
+                        "supply_24v_high": "0x0000",
+                        "supply_24v_recoveryvoltage": "0x0000",
+                        "pwm_channel_current_low": "0x0000",
+                        "pwm_channel_current_high": "0x0000",
+                        "pwm_channel_current_recoverycurrent": "0x0000",
+                        "pwm_channel_temperature_high": "0x0000",
+                        "pwm_channel_temperature_critical": "0x0000",
+                        "pwm_channel_temperature_recoverypoint": "0x0000"
+                    },
+                    "channels_enable": {
+                        "T13": true,
+                        "T14": true,
+                        "T15": true,
+                        "T16": true
+                    }
+                }
+            ]
+        },
+        {
+            "communication": {
+                "vpd": {
+                    "prod_signature": "0x00010001",
+                    "board_id": "0x03",
+                    "hardware_version": "0x0000",
+                    "batch_code": "MMYY",
+                    "uid": "0x00000000000000000000000000000000",
+                    "software_version": "0x0000",
+                    "comm_port": "0x00",
+                    "config_define_addr": "0x0000",
+                    "config_start_addr": "0x0000",
+                    "config_define_len": "0x0000",
+                    "config_start_len": "0x0000"
+                }
+            }
+        },
+        {
+            "display": {
+                "vpd": {
+                    "prod_signature": "0x00010001",
+                    "board_id": "0x05",
+                    "hardware_version": "0x0000",
+                    "batch_code": "MMYY",
+                    "uid": "0x00000000000000000000000000000000",
+                    "software_version": "0x0000",
+                    "comm_port": "0x00",
+                    "config_define_addr": "0x0000",
+                    "config_start_addr": "0x0000",
+                    "config_define_len": "0x0000",
+                    "config_start_len": "0x0000"
+                }
+            }
+        }
+    ]
+}
